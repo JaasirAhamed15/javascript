@@ -10,7 +10,31 @@ const center =document.querySelector('.center');
 console.log(window.getComputedStyle(red).backgroundColor);
 
 
-const gerBgcolor =(selectelemnet)=>{
+const getBgcolor =(selectelemnet)=>{
     return window.getComputedStyle(selectelemnet).backgroundColor;
 };
-console.log(gerBgcolor(orange));
+// console.log(getBgcolor(red));
+
+// var redelementcolor =getBgcolor(red);
+
+// red.addEventListener('mouseenter',()=>{
+//     center.style.background = redelementcolor;
+// });
+
+
+var color=getBgcolor(pink);
+
+pink.addEventListener("click",()=>{
+    center.style.background = color;
+});
+
+const magiccolorchanger=(element,color)=>{
+
+    return element.addEventListener("mouseenter",()=>{
+        center.style.background = color;
+    });
+
+
+}
+
+magiccolorchanger(red,getBgcolor(red));
